@@ -19,13 +19,36 @@ body{
 
 /*------ MAIN PAGE -----*/ 
 .cardBox{
-  height: 100px;
-  width: 100px;
+  width: 18%;
   background: #fff;
+  margin: 20px 1%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0px 20px 25px 3px rgba(207, 207, 207, 0.89);
 }
-
+.cardBox .titleCards{
+    margin-bottom: 0px;
+}
 .mainSection{
   padding: 100px;
   display: flex;
   flex-direction: row;
+  height: auto;
+  flex-wrap: wrap;
+}
+.linkCards{
+  background: #3dbd7d;
+  color: #fff;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.titleCards{
+  font-family: Montserrat;
+  font-weight: 100;
+}
+.linkCards:hover{
+  background: #339363;
 }

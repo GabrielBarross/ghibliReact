@@ -1,29 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Cards from './Cards'
 
 const Main = () => {
 
-    var ghibliApi = "https://ghibliapi.herokuapp.com/films"
-    fetch(ghibliApi)
-        .then(data => data.json())
-        // .then(test => test[0])
-        // .then(titles => titles.title)
-        .then(function (response) {
-            const mainName = response.title;
-            response.forEach(mainName)
-            return mainName
-        })
-        .then(res => console.log(res))
-    // .then(res => console.log(res))
-    // .then(test => test.indexOf(0))
-    // .then(res => console.log(res))
+    const [movieData, setMovieData] = useState([])
+    useEffect(() => {
+        var ghibliApi = "https://ghibliapi.herokuapp.com/films"
+        fetch(ghibliApi)
+            .then(data => data.json())
+            .then(res => {
+                var top = res.map((data) => ({ title: data.title, director: data.director }))
+                setMovieData(top)
+            })
+    }, []);
+
 
     return (
         <>
             <Header />
             <section className="mainSection">
-                <Cards />
+                {
+                    movieData.map((data, index) => {
+                        return <Cards movieData={data} key={index} />
+                    })
+                }
             </ section>
         </>
     );
