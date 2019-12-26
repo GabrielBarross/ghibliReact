@@ -52,3 +52,14 @@ body{
 .linkCards:hover{
   background: #339363;
 }
+
+.descriptionCard{
+  max-height: 80px;
+  overflow: hidden;
+  padding: 10px 20px;
+}
+
+.mainTitle{
+  font-family: Montserrat;
+  font-weight: 500;
+}

@@ -6,7 +6,7 @@ const Header = () => {
         <>
             <header className="mainHeader">
                 <img src={GhibliLogo} className="logoImage" />
-                <h1>Ghibli Movies List</h1>
+                <h1 className="mainTitle">Ghibli Movies List</h1>
             </header>
         </>
     );
