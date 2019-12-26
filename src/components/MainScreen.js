@@ -10,7 +10,7 @@ const Main = () => {
         fetch(ghibliApi)
             .then(data => data.json())
             .then(res => {
-                var top = res.map((data) => ({ title: data.title, director: data.director, description: data.description }))
+                var top = res.map((data) => ({ title: data.title, director: data.director, description: data.description, id: data.id }))
                 setMovieData(top)
             })
     }, []);
