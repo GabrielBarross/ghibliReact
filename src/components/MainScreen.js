@@ -35,10 +35,7 @@ const Main = () => {
                 </header>
 
                 <Switch>
-                    <Route path="/films">
-                        <Film />
-                    </Route>
-                    <Route path="/">
+                    <Route exact path="/">
                         <section className="mainSection">
                             {
                                 movieData.map((data, index) => {
@@ -47,6 +44,10 @@ const Main = () => {
                             }
                         </ section>
                     </Route>
+                    <Route path="/([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})/">
+                        <Film />
+                    </Route>
+
                 </Switch>
             </Router>
         </>
